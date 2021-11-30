@@ -1,7 +1,13 @@
+//import { Order } from "./Order.jsx";
 export function PendingOrders(props) {
-  return (
-    <section className="card">
+ //let newOrder;
+//const queue = props.articles.queue;
+
   
+ 
+
+  return (
+    <section className="card">  
       <div className="header">        
         <h1>Pending orders</h1>
       </div>
@@ -14,29 +20,25 @@ export function PendingOrders(props) {
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>
-            <div className="circle">
-              <p>1</p>
-            </div>
-          </td>
-          <td className="products">
-            <ul>
-              <li>Row 26</li>
-              <li>Row 26</li>
-              <li>Row 26</li>
-            </ul>
-          </td>
-          <td className="quantity">
-              <ul>
-              <li>Row 26</li>
-              <li>Row 26</li>
-              <li>Row 26</li>
-              </ul>
-          </td>
-          </tr>
+          
           </tbody>
       </table>
     </section>
   );
 }
+
+
+
+
+/* 
+function GetProducts(order){
+return(
+  <td className="products">
+  <ul>
+    <li>Row 26</li>
+    <li>Row 26</li>
+    <li>Row 26</li>
+  </ul>
+</td>
+)
+} */

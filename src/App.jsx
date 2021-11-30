@@ -16,8 +16,7 @@ function App() {
       async function fetchData() {
         const res = await fetch("https://foo-bar-project.herokuapp.com/");
         const data = await res.json();
-        setArticles(data);
-        console.log("data", data);
+        setArticles(data);  
       }
       fetchData();
     }, 5000);
