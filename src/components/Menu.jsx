@@ -1,7 +1,7 @@
 export function Menu(props){
     return(
         <section className="top_menu">
-            <div clasName="logo">
+            <div className="logo">
                 <h1>FooBar</h1>
             </div>
             <section className="menucardwrapper">

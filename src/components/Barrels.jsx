@@ -1,14 +1,14 @@
 export function Barrels(props) {
   return (
     <section className="card">
-      <div clasName="header">
+      <div className="header">
         <h1>Barrels in stock</h1>
       </div>
       <div className="graph">
         <ul>
-          {props.articles.map((art) => (
+          {/* {props.articles.map((art) => (
             <h2>{art.name}</h2>
-          ))}
+          ))} */}
         </ul>
 
         {/* <div className="beer">

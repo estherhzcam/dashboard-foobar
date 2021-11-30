@@ -1,16 +1,19 @@
 export function Bartenders(props){
     return(
         <section className="card">
-            <div clasName="header">
+            <div className="header">
                 <h1>Bartenders</h1>
             </div>
            <table>
+               <thead>
               <tr>
                   <th>Image</th>
                   <th>Name</th>
                   <th>Status</th>
                   <th>Order Nº</th>
               </tr>
+              </thead>
+              <tbody>
               <tr>
                   <td><img></img></td>
                   <td>Jonas</td>
@@ -35,6 +38,7 @@ export function Bartenders(props){
                   <td id="status">Pouring beer</td>
                   <td id="ordernumber">123</td>
               </tr>
+              </tbody>
            </table>
             </section>
     )

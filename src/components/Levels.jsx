@@ -1,7 +1,7 @@
 export function Levels(props){
     return(
         <section className="card">
-            <div clasName="header">
+            <div className="header">
                 <h1>Levels on taps</h1>
             </div>
             <div className="graph">
