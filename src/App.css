@@ -1,42 +1,92 @@
-.App {
-  text-align: center;
+/* General css */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+.App{
+  display: grid;
+  grid-gap: 2em;
+  background-color: #F8F9FB;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 16px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-size: 1.15em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#cards-wrapper{
+  display:grid;
+  grid-gap: 1em;
+  margin: 8px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/*----------------------Card styles---------------------- */
+.card {
+  border-radius:9px;
+  padding: 0;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  padding:1em;
+  border-top: 10px solid #1C2232 ;
 }
 
-.App-link {
-  color: #61dafb;
+
+.card h1{
+  margin-top:0;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* -----menu cards--------- */
+
+.menucard {
+  border-radius:9px;
+  padding: 1em;
+  background-color: white;
 }
 
-button {
-  font-size: calc(10px + 2vmin);
+
+
+li {
+  list-style: none;
+}
+ul {
+  padding:0;
+  margin:0;
+}
+
+
+@media (min-width: 700px) and (orientation: portrait) { 
+  /* menu top and two columns for the apps */
+  .App{
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+ }
+ .menu{
+   grid-column: 1/-1;
+ }
+ #cards-wrapper{
+  grid-column: 1/-1;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2em
+}
+ 
+}
+
+@media (min-width: 912px) and (orientation: landscape) { 
+  /* menu top and two columns for the apps */
+  .App{
+    grid-template-columns: 1fr 4fr;
+    grid-gap: 3em;
+ }
+.menu {
+  grid-column: 1
+}
+
+#cards-wrapper{
+  grid-column: 2/-1;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2em
+}
+
 }

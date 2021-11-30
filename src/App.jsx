@@ -15,12 +15,14 @@ function App() {
   return (
    <div className="App">
      <Menu />
+     <section id="cards-wrapper">
      <PendingOrders/>
      <Bartenders />
      <Levels />
      <Barrels />
      <SoldBeers />
      <Queue />
+     </section>
 
    </div>
   )

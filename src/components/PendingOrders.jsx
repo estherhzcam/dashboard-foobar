@@ -1,7 +1,8 @@
 export function PendingOrders(props) {
   return (
     <section className="card">
-      <div clasName="header">
+  
+      <div clasName="header">        
         <h1>Pending orders</h1>
       </div>
       <table>
