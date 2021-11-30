@@ -4,14 +4,13 @@
 
 .App{
   display: grid;
-  grid-gap: 2em;
   background-color: #F8F9FB;
   font-family: 'Noto Sans', sans-serif;
   font-size: 16px;
 }
 
 h1 {
-  font-size: 1.15em;
+  font-size: 1em;
 }
 
 #cards-wrapper{
@@ -34,14 +33,35 @@ h1 {
   margin-top:0;
   
 }
+/* ---------Top Menu---------- */
+.top_menu {
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 41%, rgba(1,1,42,1) 42%, rgba(1,1,42,1) 100%);
+  color: #F8F9FB;
+  display: grid;
+}
 
 /* -----menu cards--------- */
 
 .menucard {
+  width: 75%;
   border-radius:9px;
-  padding: 1em;
-  background-color: white;
+  padding: 0.5em;
+  background-color: #F8F9FB;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  color:#1C2232;
+  display: flex;
+  flex-direction: column;
+ justify-content: space-between;
 }
+
+.menucardwrapper {
+ display: flex;
+ gap: 0.5em;
+ margin: 0 8px;
+ 
+}
+
+
 
 
 
@@ -58,16 +78,30 @@ ul {
   /* menu top and two columns for the apps */
   .App{
     grid-template-columns: 1fr 1fr;
-    grid-gap: 1em;
  }
- .menu{
-   grid-column: 1/-1;
+
+ /* ---------Top Menu---------- */
+.top_menu {
+  grid-column: 1/-1;
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 31%, rgba(1,1,42,1) 32%, rgba(1,1,42,1) 100%);
+}
+
+/* -----menu cards--------- */
+
+.menucardwrapper {
+  margin: 0 160px;
+  gap: 1em;
+  
  }
+
+/* ----- general cards ----*/
+
  #cards-wrapper{
+  margin: 25px;
   grid-column: 1/-1;
   display:grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 2em
+  grid-gap: 1em;
 }
  
 }
@@ -75,18 +109,41 @@ ul {
 @media (min-width: 912px) and (orientation: landscape) { 
   /* menu top and two columns for the apps */
   .App{
-    grid-template-columns: 1fr 4fr;
-    grid-gap: 3em;
+    grid-template-columns: 1fr 5fr;
  }
-.menu {
-  grid-column: 1
+/* ---------Top Menu---------- */
+.top_menu {
+  grid-column: 1;
+  background: #1C2232;
+  color: #F8F9FB;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+.menucardwrapper {
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  
+ }
+
+ /* ----- general cards ----*/
 
 #cards-wrapper{
+  margin: 2em;
   grid-column: 2/-1;
   display:grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 2em
+  grid-gap: 2em;
 }
 
+}
+
+@media (min-width: 1200px) {
+  #cards-wrapper{
+  
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2em;
+
+  }
 }

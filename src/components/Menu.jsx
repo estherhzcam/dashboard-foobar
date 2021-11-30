@@ -1,9 +1,10 @@
 export function Menu(props){
     return(
-        <section className="menu">
+        <section className="top_menu">
             <div clasName="logo">
                 <h1>FooBar</h1>
             </div>
+            <section className="menucardwrapper">
             <div className="menucard" id="time">
                 <h1>Time until closure</h1>
                 <h1 id="remaining_time">2:00</h1>
@@ -16,6 +17,7 @@ export function Menu(props){
             <h1>Sales</h1>
                 <h1 id="sales"><span>30.000</span>DKK</h1>
             </div>
+            </section>
         </section>
     )
     }
