@@ -17,7 +17,7 @@ export function Barrels(props) {
   });
 
   console.log("what is copy", barrelsCopy);
-  const mapped = barrelsCopy.map((article) => (
+  const mappedBeers = barrelsCopy.map((article) => (
     <article className="beer">
       <div
         className="stockcircle"
@@ -44,7 +44,7 @@ export function Barrels(props) {
         <h1>Barrels in stock</h1>
       </div>
       <div className="graph barrels">
-        {mapped}
+        {mappedBeers}
         {/* <div className="beer">
                     <div className="circle"><p>1</p></div>
                     <p>El Hefe</p>

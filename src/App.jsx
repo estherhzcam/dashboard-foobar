@@ -22,7 +22,7 @@ function App() {
         /*  console.log("data", data); */
       }
       fetchData();
-    }, 1000);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
   if (loading) return <h1>Loading...</h1>;
@@ -32,7 +32,7 @@ function App() {
       <section id="cards-wrapper">
         <PendingOrders articles={articles} />
         <Bartenders articles={articles} />
-        <Levels articles={articles} />
+        <Levels articles={articles.taps} />
         <Barrels articles={articles.storage} />
         <SoldBeers articles={articles} />
         <Queue articles={articles} />
