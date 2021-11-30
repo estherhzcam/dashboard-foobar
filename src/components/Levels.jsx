@@ -3,8 +3,9 @@ import "react-circular-progressbar/dist/styles.css";
 
 export function Levels(props) {
   console.log("levels", props);
+
   const mappedLevels = props.articles.map((article) => (
-    <div className="levels">
+    <div className="levels" key={article.id}>
       <p>{article.beer}</p>
       <div
         className="circlegraph"

@@ -16,9 +16,22 @@ export function Barrels(props) {
     }
   });
 
+  barrelsCopy.map((beer) => (beer.id = Math.random()));
+
+  // this is how it is possible to add prices to beers
+  /*   barrelsCopy.map((beer) => {
+    beer.id = Math.random();
+    if (beer.name == "El Hefe") {
+      beer.price = "50kr";
+    } else {
+      beer.price = "100kr";
+    }
+  }); */
+
   console.log("what is copy", barrelsCopy);
+
   const mappedBeers = barrelsCopy.map((article) => (
-    <article className="beer">
+    <article className="beer" key={article.id}>
       <div
         className="stockcircle"
         style={{
