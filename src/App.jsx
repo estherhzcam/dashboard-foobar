@@ -11,17 +11,21 @@ import { Queue } from "./components/Queue.jsx";
 function App() {
   const [count, setCount] = useState(0);
   const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const interval = setInterval(() => {
       async function fetchData() {
         const res = await fetch("https://foo-bar-project.herokuapp.com/");
         const data = await res.json();
         setArticles(data);
-        console.log("data", data);
+        setLoading(false);
+        /*  console.log("data", data); */
       }
       fetchData();
-    }, 5000);
+    }, 1000);
+    return () => clearInterval(interval);
   }, []);
+  if (loading) return <h1>Loading...</h1>;
   return (
     <div className="App">
       <Menu articles={articles} />
