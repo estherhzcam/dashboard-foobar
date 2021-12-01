@@ -5,7 +5,13 @@ export function PendingOrders(props) {
       <div className="header">        
         <h1>Pending orders</h1>
       </div>
-      <table>
+      <table style={{
+          width: "100%",
+          textAlign:"left",
+          gap: "1em",
+          fontSize: "0.9em",  
+          marginLeft: "0",       
+        }}>
         <thead>
         <tr>
           <th>Order Nº</th>
