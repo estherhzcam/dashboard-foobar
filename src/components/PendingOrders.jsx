@@ -2,7 +2,7 @@ import { Order } from "./Order.jsx";
 export function PendingOrders(props) {
   //let newOrder;
   const queue = props.articles.queue;
-  console.log(queue);
+
   const newOrder = queue.map((order) => <Order key={order.id} {...order} />);
 
   if (queue.length > 0)

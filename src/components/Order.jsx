@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Product } from "./Product.jsx";
+
 export function Order(props) {
   //we need to find if an element is duplicated
   
@@ -28,9 +27,14 @@ export function Order(props) {
   });
 
   console.log(typeof newArray, newArray);
+  
+  const filteredProductList = newArray.filter((elm, index)=> {newArray.indexOf(elm.beerName) === index})
+  /* Array.from(new Set(newArray.map((beer)=>{
+    beer.beerName
+  }))).map(name=>{return newArray.find(beer=>beer.beerName === name)}) */
 
-  const filteredProductList = [...new Set(newArray)];
-  console.log("last list " + filteredProductList);
+
+  console.log("Filtered " +filteredProductList);
 
   const orderProducts = props.order.map((product, index) => {
     return <li key={index}>{product}</li>;

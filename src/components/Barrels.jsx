@@ -1,5 +1,5 @@
 export function Barrels(props) {
-  console.log("barrels", props);
+ 
   /* const color = props.articles.forEach((art) => {
     art.amount > 3 ? "red" : "green";
   }); */
@@ -28,7 +28,7 @@ export function Barrels(props) {
     }
   }); */
 
-  console.log("what is copy", barrelsCopy);
+
 
   const mappedBeers = barrelsCopy.map((article) => (
     <article className="beer" key={article.id}>
