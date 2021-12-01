@@ -41,7 +41,7 @@ export function Order(props) {
           </p>
         </div>
       </td>
-      {orderProducts}
+      <td><ul> {orderProducts}</ul></td>     
     </tr>
   ); 
 }

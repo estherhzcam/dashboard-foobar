@@ -39,7 +39,9 @@ export function PendingOrders(props) {
         <table>
           <thead>
             <tr>
-              <th>No pending orders</th>
+              <th style={{
+                fontSize: "0.9em", 
+              }}>No pending orders</th>
             </tr>
           </thead>
           <tbody></tbody>
