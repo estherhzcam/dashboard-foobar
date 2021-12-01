@@ -5,34 +5,42 @@ export function Bartenders(props){
     const klaus = props.articles.bartenders[1];
     const peter = props.articles.bartenders[0];
     const statusAdjusted = (status)=>{
-        if (status === "startServing" || status == "pourBeer" || status == "reserveTap"){
+        if (status === "startServing" || status == "pourBeer" || status == "reserveTap" || status == "releaseTap"){
             return <p style={{
-                borderRadius: "35%",
+                borderRadius: "13px",
                 padding: "0.3em 1em",
                 backgroundColor: "yellow",
                 width: "max-content",
             }}>Serving</p>
         } else if (status == "receivePayment"){
             return <p style={{
-                borderRadius: "35%",
+                borderRadius: "13px",
                 padding: "0.3em 1em",
                 backgroundColor: "green",
                 width: "max-content",
             }}>Getting payed</p>
         } else if (status == "waiting"){
             return <p style={{
-                borderRadius: "35%",
+                borderRadius: "13px",
                 padding: "0.3em 1em",
                 backgroundColor: "grey",
                 width: "max-content",
             }}>Waiting</p>
         } else if (status == "replaceKeg"){
             return <p style={{
-                borderRadius: "35%",
+                borderRadius: "13px",
                 padding: "0.3em 1em",
                 backgroundColor: "orange",
                 width: "max-content",
             }}>Changing keg</p>
+        } else {
+            return <p style={{
+                borderRadius: "13px",
+                padding: "0.3em 1em",
+                backgroundColor: "white",
+                width: "max-content",
+            }}>{status}</p>
+
         }
     }
     return(
