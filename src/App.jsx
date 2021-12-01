@@ -19,25 +19,27 @@ function App() {
         const data = await res.json();
         setArticles(data);
         setLoading(false);
+        /*  console.log("data", data); */
       }
       fetchData();
     }, 5000);
+    return () => clearInterval(interval);
   }, []);
   if (loading) return <h1>Loading...</h1>;
-  else
-    return (
-      <div className="App">
-        <Menu articles={articles} />
-        <section id="cards-wrapper">
-          <PendingOrders articles={articles} />
-          <Bartenders articles={articles} />
-          <Levels articles={articles} />
-          <Barrels articles={articles.storage} />
-          <SoldBeers articles={articles} />
-          <Queue articles={articles} />
-        </section>
-      </div>
-    );
+
+  return (
+    <div className="App">
+      <Menu articles={articles} />
+      <section id="cards-wrapper">
+        <PendingOrders articles={articles} />
+        <Bartenders articles={articles} />
+        <Levels articles={articles.taps} />
+        <Barrels articles={articles.storage} />
+        <SoldBeers articles={articles} />
+        <Queue articles={articles} />
+      </section>
+    </div>
+  );
 }
 
 export default App;
