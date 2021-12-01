@@ -18,25 +18,26 @@ function App() {
         const res = await fetch("https://foo-bar-project.herokuapp.com/");
         const data = await res.json();
         setArticles(data);
-        setLoading(false);  
+        setLoading(false);
       }
       fetchData();
     }, 5000);
   }, []);
-  if (loading) return (<h1>Loading...</h1>)
-  else return (
-    <div className="App">
-      <Menu articles={articles} />
-      <section id="cards-wrapper">
-        <PendingOrders articles={articles} />
-        <Bartenders articles={articles} />
-        <Levels articles={articles} />
-        <Barrels articles={articles.storage} />
-        <SoldBeers articles={articles} />
-        <Queue articles={articles} />
-      </section>
-    </div>
-  );
+  if (loading) return <h1>Loading...</h1>;
+  else
+    return (
+      <div className="App">
+        <Menu articles={articles} />
+        <section id="cards-wrapper">
+          <PendingOrders articles={articles} />
+          <Bartenders articles={articles} />
+          <Levels articles={articles} />
+          <Barrels articles={articles.storage} />
+          <SoldBeers articles={articles} />
+          <Queue articles={articles} />
+        </section>
+      </div>
+    );
 }
 
 export default App;

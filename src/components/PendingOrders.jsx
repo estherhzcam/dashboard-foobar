@@ -2,8 +2,8 @@ import { Order } from "./Order.jsx";
 export function PendingOrders(props) {
   //let newOrder;
   const queue = props.articles.queue;
-  console.log(queue)
-  const newOrder = queue.map((order)=>(<Order key={order.id} {...order}/>))
+  console.log(queue);
+  const newOrder = queue.map((order) => <Order key={order.id} {...order} />);
 
   if (queue.length > 0)
     return (
@@ -11,13 +11,15 @@ export function PendingOrders(props) {
         <div className="header">
           <h1>Pending orders</h1>
         </div>
-        <table style={{
-          width: "100%",
-          textAlign:"left",
-          gap: "1em",
-          fontSize: "0.9em",  
-          marginLeft: "0",       
-        }}>
+        <table
+          style={{
+            width: "100%",
+            textAlign: "left",
+            gap: "1em",
+            fontSize: "0.9em",
+            marginLeft: "0",
+          }}
+        >
           <thead>
             <tr>
               <th>Order Nº</th>
@@ -25,9 +27,7 @@ export function PendingOrders(props) {
               <th>Quantity</th>
             </tr>
           </thead>
-          <tbody>
-            {newOrder}
-          </tbody>
+          <tbody>{newOrder}</tbody>
         </table>
       </section>
     );
@@ -40,9 +40,13 @@ export function PendingOrders(props) {
         <table>
           <thead>
             <tr>
-              <th style={{
-                fontSize: "0.9em", 
-              }}>No pending orders</th>
+              <th
+                style={{
+                  fontSize: "0.9em",
+                }}
+              >
+                No pending orders
+              </th>
             </tr>
           </thead>
           <tbody></tbody>
