@@ -18,7 +18,7 @@ export function Bartenders(props){
                 padding: "0.3em 1em",
                 backgroundColor: "green",
                 width: "max-content",
-            }}>Getting payed</p>
+            }}>Getting paid</p>
         } else if (status == "waiting"){
             return <p style={{
                 borderRadius: "13px",

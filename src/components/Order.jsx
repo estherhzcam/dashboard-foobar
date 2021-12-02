@@ -27,18 +27,37 @@ export function Order(props) {
   });
 
   console.log(typeof newArray, newArray);
+  const filteredProductList = newArray.filter((elm, index, self)=> {
+    return(  
+    index === self.findIndex((e)=> (e.beerName === elm.beerName && e.amount === elm.amount)))
+  })
+  /* const filteredProductList =  newArray.filter(function(item, pos, self){
+    return self.indexOf(item) === pos;})
+ */
+    console.log(filteredProductList);
+/* const filteredProductList = newArray.filter((elm, index, self)=> {
   
-  const filteredProductList = newArray.filter((elm, index)=> {newArray.indexOf(elm.beerName) === index})
+    index === self.findIndex((e)=> (e.beerName === elm.beerName && e.amount === elm.amount))
+  }) */ 
+
+
+   
   /* Array.from(new Set(newArray.map((beer)=>{
     beer.beerName
   }))).map(name=>{return newArray.find(beer=>beer.beerName === name)}) */
 
 
-  console.log("Filtered " +filteredProductList);
+ 
 
-  const orderProducts = props.order.map((product, index) => {
+  /* const orderProducts = props.order.map((product, index) => {
     return <li key={index}>{product}</li>;
-  });
+  }); */
+
+  const orderProducts = filteredProductList.map((product, index) =>{
+    return <li key={index}>{product.beerName}</li>
+  })
+  const amountProducts = filteredProductList.map((product, index) =>{
+    return <li key={index}>{product.amount}</li>})
 
   return (
     <tr>
@@ -69,6 +88,9 @@ export function Order(props) {
       </td>
       <td>
         <ul> {orderProducts}</ul>
+      </td>
+      <td>
+        <ul> {amountProducts}</ul>
       </td>
     </tr>
   );
