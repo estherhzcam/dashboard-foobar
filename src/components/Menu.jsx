@@ -10,8 +10,7 @@ export function Menu(props) {
   const closingTime = closingDate.getTime();
   const remainingTime = closingTime - currentTime;
   const timeUntilClosure = hourFromMs(remainingTime);
-
-
+  console.log(remainingTime);
 
   return (
     <section className="top_menu">
@@ -39,15 +38,14 @@ export function Menu(props) {
 }
 
 function hourFromMs(time) {
-  let seconds = Math.floor((time / 1000) % 60),
-    minutes = Math.floor((time / (1000 * 60)) % 60),
+  let minutes = Math.floor((time / (1000 * 60)) % 60),
     hours = Math.floor((time / (1000 * 60 * 60)) % 24);
 
   hours = hours < 10 ? "0" + hours : hours;
   minutes = minutes < 10 ? "0" + minutes : minutes;
-  if (hours > 0 && minutes > 0) {
-    return hours + ":" + minutes;
-  } else {
+  if (hours <= 0 && minutes <= 0) {
     return "00:00";
+  } else {
+    return hours + ":" + minutes;
   }
 }
