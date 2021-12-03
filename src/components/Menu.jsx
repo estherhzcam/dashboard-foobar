@@ -1,23 +1,27 @@
-export function Menu(props){
-    let currentTime = props.articles.timestamp;
-    let myDate = new Date(currentTime);
-    let myHour = myDate.getHours();
-    let myMinutes = myDate.getMinutes();
-    let remainingMinutes = 60 - myMinutes
-    let remainingHours = 22 - 1- myHour;
-    let oclockHours = 22 - myHour
-   
-    //console.log(remainingMinutes)    
+export function Menu(props) {
+  let currentTime = props.articles.timestamp;
 
-    return(
-        <section className="top_menu">
-            <div className="logo">
-                <h1>FooBar</h1>
-            </div>
-            <section className="menucardwrapper">
-            <div className="menucard" id="time">
-                <h1>Time until closure</h1>
-                <h1 id="remaining_time">{myMinutes > 0 ? remainingHours : oclockHours}:{myMinutes > 0 ? remainingMinutes : "00"}</h1>
+  const today = new Date(currentTime);
+  const day = today.getDate();
+  const month = today.getMonth();
+  const year = today.getFullYear();
+
+  const closingDate = new Date(year, month, day, 22);
+  const closingTime = closingDate.getTime();
+  const remainingTime = closingTime - currentTime;
+  const timeUntilClosure = hourFromMs(remainingTime);
+
+
+
+  return (
+    <section className="top_menu">
+      <div className="logo">
+        <h1>FooBar</h1>
+      </div>
+      <section className="menucardwrapper">
+        <div className="menucard" id="time">
+          <h1>Time until closure</h1>
+          {<h1 id="remaining_time">{timeUntilClosure}</h1>}
         </div>
         <div className="menucard" id="people">
           <h1>People in queue</h1>
@@ -32,4 +36,18 @@ export function Menu(props){
       </section>
     </section>
   );
+}
+
+function hourFromMs(time) {
+  let seconds = Math.floor((time / 1000) % 60),
+    minutes = Math.floor((time / (1000 * 60)) % 60),
+    hours = Math.floor((time / (1000 * 60 * 60)) % 24);
+
+  hours = hours < 10 ? "0" + hours : hours;
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+  if (hours > 0 && minutes > 0) {
+    return hours + ":" + minutes;
+  } else {
+    return "00:00";
+  }
 }
