@@ -10,7 +10,7 @@ export function Menu(props) {
   const closingTime = closingDate.getTime();
   const remainingTime = closingTime - currentTime;
   const timeUntilClosure = hourFromMs(remainingTime);
-  console.log(remainingTime);
+ 
 
   return (
     <section className="top_menu">
@@ -20,7 +20,7 @@ export function Menu(props) {
       <section className="menucardwrapper">
         <div className="menucard" id="time">
           <h1>Time until closure</h1>
-          {<h1 id="remaining_time">{timeUntilClosure}</h1>}
+          {<h1 id="remaining_time">{remainingTime > 0 ? timeUntilClosure : "00:00"}</h1>}
         </div>
         <div className="menucard" id="people">
           <h1>People in queue</h1>
