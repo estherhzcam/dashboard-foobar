@@ -74,11 +74,15 @@ ul {
 
 /*----------------Barrels--------------*/
 .beer {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   gap: 0.5rem;
   align-items: center;
-  flex: 1 0 0;
+  flex: 1 0 0; */
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.2rem;
+  align-items: center;
 }
 .beer .stockcircle p {
   margin: 0;
@@ -240,22 +244,55 @@ ul {
     font-size: 0.8rem;
   }
   /*----------------Barrels--------------*/
-  .barrels {
+  /*  .barrels {
     height: 250px;
     column-gap: 1rem;
-  }
+  } */
   .beer-name {
     font-size: 0.8rem;
   }
 }
 
+@media (min-width: 912px) and (max-width: 1050px) {
+  .beer {
+    width: 130px;
+    gap: 0.5rem;
+  }
+  .barrels {
+    height: 280px;
+    column-gap: 0rem;
+  }
+}
+@media (min-width: 1051px) {
+  .beer {
+    width: 150px;
+    gap: 0.5rem;
+  }
+  .barrels {
+    height: 250px;
+  }
+}
+@media (min-width: 1300px) and (max-width: 1480px) {
+  .beer {
+    width: 100%;
+    gap: 0.5rem;
+  }
+  .beer-name {
+    margin: 0;
+  }
+  .barrels {
+    height: inherit;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+  }
+}
 @media (min-width: 1300px) {
   #cards-wrapper {
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2em;
   }
   /*----------------Barrels--------------*/
-  .stockcircle {
+  /*   .stockcircle {
     width: 30px;
     height: 30px;
     display: grid;
@@ -268,11 +305,25 @@ ul {
   }
   .beer-name {
     font-size: 1rem;
-  }
+  } */
   /*----------------Levels--------------*/
 
   .levels {
     font-size: 1rem;
+  }
+}
+@media (min-width: 1481px) {
+  .beer {
+    width: 150px;
+    gap: 0.5rem;
+  }
+  .beer-name {
+    margin: 0;
+  }
+  .barrels {
+    height: 250px;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 }
 @media screen and (min-width: 1550px) {
