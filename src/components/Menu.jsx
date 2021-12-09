@@ -20,7 +20,7 @@ export function Menu(props) {
       <section className="menucardwrapper">
         <div className="menucard" id="time">
           <h1>Time until closure</h1>
-          {<h1 id="remaining_time">{remainingTime > 0 ? timeUntilClosure : "00:00"}</h1>}
+          {<h1 id="remaining_time">{remainingTime > 0 ? timeUntilClosure : "0 h 0 min"}</h1>}
         </div>
         <div className="menucard" id="people">
           <h1>People in queue</h1>
@@ -44,8 +44,8 @@ function hourFromMs(time) {
   hours = hours < 10 ? "0" + hours : hours;
   minutes = minutes < 10 ? "0" + minutes : minutes;
   if (hours <= 0 && minutes <= 0) {
-    return "00:00";
+    return "0 h 0 m";
   } else {
-    return hours + ":" + minutes;
+    return hours + "h " + minutes + "min ";
   }
 }
