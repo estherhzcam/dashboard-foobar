@@ -47,7 +47,7 @@ fetchData();
       <div style={{width:"90%"}}>
       <ResponsiveContainer width="100%" height={250} margin={{top:0, right:0, bottom:0, left:0}}>
       <LineChart width={290} height={120} data={queue} margin={{top:60, right:3, bottom:0, left:-20}} >
-        <Line type="monotone" dataKey="queue" stroke="#573254" />
+        <Line type="monotone" dataKey="queue" stroke="#573254" strokeWidth={3} />
         <XAxis dataKey="time" />
         <YAxis />
         <Tooltip />
