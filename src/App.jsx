@@ -11,6 +11,7 @@ import { Queue } from "./components/Queue.jsx";
 function App() {
   const [count, setCount] = useState(0);
   const [articles, setArticles] = useState([]);
+
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const interval = setInterval(() => {
@@ -25,6 +26,7 @@ function App() {
     }, 5000);
     return () => clearInterval(interval);
   }, []);
+
   if (loading) return <h1>Loading...</h1>;
 
   return (
