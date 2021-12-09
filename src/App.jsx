@@ -6,7 +6,7 @@ import { Bartenders } from "./components/Bartenders.jsx";
 import { Levels } from "./components/Levels.jsx";
 import { Barrels } from "./components/Barrels.jsx";
 import { SoldBeers } from "./components/SoldBeers.jsx";
-import { Queue } from "./components/Queue.jsx";
+import QueueArchive from "./components/Queue.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -36,7 +36,7 @@ function App() {
         <Levels articles={articles.taps} />
         <Barrels articles={articles.storage} />
         <SoldBeers articles={articles} />
-        <Queue articles={articles} />
+        <QueueArchive />
       </section>
     </div>
   );

@@ -2,7 +2,6 @@ import { Order } from "./Order.jsx";
 export function PendingOrders(props) {
   //let newOrder;
   const queue = props.articles.queue;
-  console.log("queue", queue.length)
   //Deoending on the length of the queue we'll display diferent content. Must be cleaned
 
   const newOrder = queue.map((order) => <Order key={order.id} {...order} />);
