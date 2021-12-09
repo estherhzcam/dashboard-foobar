@@ -115,6 +115,68 @@ ul {
   gap: 0.5rem;
 }
 
+/*----------------Beers Sold--------------*/
+.beerAmount {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  align-items: center;
+  gap: 0.5rem;
+}
+.bargraph {
+  display: grid;
+  gap: 0.1rem;
+}
+.bar {
+  display: flex;
+  flex-direction: row;
+  /*  align-items: center; */
+  gap: 0.3rem;
+}
+.bar p {
+  margin: 0;
+  font-size: 0.8rem;
+}
+.beer-name {
+  margin: 0;
+}
+.bar_money {
+  background-color: #3eb6ff;
+
+  height: 12px;
+  border-radius: 2px;
+}
+.bar_liters {
+  background-color: #ffc50d;
+
+  height: 12px;
+  border-radius: 2px;
+  align-self: flex-end;
+}
+.legend {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.liters,
+.money {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+.square {
+  width: 20px;
+  height: 20px;
+
+  border-radius: 2px;
+  align-self: center;
+}
+.liters .square {
+  background-color: #ffc50d;
+}
+.money .square {
+  background-color: #3eb6ff;
+}
 @media (min-width: 700px) and (orientation: portrait) {
   /* menu top and two columns for the apps */
   .App {
@@ -199,6 +261,13 @@ ul {
   }
   .beer-name {
     font-size: 1rem;
+  }
+  /*----------------Beers Sold--------------*/
+  .beerAmount {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    align-items: center;
+    margin-bottom: 0.5rem;
   }
 }
 @media (min-width: 912px) and (orientation: landscape) {

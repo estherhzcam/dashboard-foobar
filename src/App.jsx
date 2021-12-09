@@ -20,7 +20,6 @@ function App() {
         const data = await res.json();
         setArticles(data);
         setLoading(false);
-        /*  console.log("data", data); */
       }
       fetchData();
     }, 5000);
@@ -37,7 +36,7 @@ function App() {
         <Bartenders articles={articles} />
         <Levels articles={articles.taps} />
         <Barrels articles={articles.storage} />
-        <SoldBeers articles={articles} />
+        <SoldBeers />
         <Queue articles={articles} />
       </section>
     </div>
