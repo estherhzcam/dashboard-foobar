@@ -8,6 +8,7 @@ import { Barrels } from "./components/Barrels.jsx";
 import { SoldBeers } from "./components/SoldBeers.jsx";
 import QueueArchive from "./components/Queue.jsx";
 import { SpinnerDotted  } from 'spinners-react';
+import {MobileMenu} from './components/MobileMenu.jsx'
 
 function App() {
   const [articles, setArticles] = useState([]);
@@ -59,9 +60,10 @@ function App() {
         <PendingOrders articles={articles} />
         <Bartenders articles={articles} />
         <Levels articles={articles.taps} />
-        <Barrels articles={articles.storage} />
-        <QueueArchive archive={archive}/>
+        <Barrels articles={articles.storage} />        
         <SoldBeers archive={archive}/>
+        <QueueArchive archive={archive}/>
+        <MobileMenu/>
       </section>
     </div>
   );

@@ -77,7 +77,7 @@ export function Bartenders(props) {
     }
   };
   return (
-    <section className="card bartenders">
+    <section id="serving" className="card bartenders">
       <div className="header">
         <h1>Bartenders</h1>
       </div>

@@ -11,7 +11,7 @@ export function PendingOrders(props) {
 
   if (queue.length > 0 && queue.length <= 4)
     return (
-      <section className="card orders">
+      <section id="pendingOrders" className="card orders">
         <div className="header">
           <h1>Pending orders</h1>
         </div>

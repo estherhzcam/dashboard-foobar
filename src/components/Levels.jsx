@@ -27,7 +27,7 @@ export function Levels(props) {
   ));
 
   return (
-    <section className="card">
+    <section id="levels" className="card">
       <div className="header">
         <h1>Levels on taps</h1>
       </div>

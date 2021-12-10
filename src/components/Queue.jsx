@@ -22,7 +22,7 @@ export const QueueArchive = memo(function Queue(props) {
   }, []);
 
   return (
-    <section className="card">
+    <section id="queue" className="card">
       <div className="header">
         <h1>People in queue by hour</h1>
       </div>

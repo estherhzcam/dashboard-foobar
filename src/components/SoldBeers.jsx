@@ -105,7 +105,7 @@ export const SoldBeers = memo(function SoldBeers(props) {
   ));
 
   return (
-    <section className="card">
+    <section id="salesbytype" className="card">
       <div className="header">
         <h1>Sold beers by type</h1>
       </div>

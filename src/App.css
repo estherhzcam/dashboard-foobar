@@ -266,6 +266,9 @@ ul {
 tspan {
   font-size: 0.8rem;
 }
+#queue {
+  margin-bottom: 15vh;
+}
 
 @media (min-width: 700px) {
   /*----------------Bartenders--------------*/
@@ -379,5 +382,51 @@ tspan {
   #cards-wrapper {
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2em;
+  }
+}
+
+
+/* --------------Menu mobile----------- */
+
+.mobileMenu {
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
+  background-color: var(--bg-color);
+  position: fixed;
+  top: 90%;
+  left:0;
+  padding: 0 1vw;
+}
+
+.menuOption {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+ justify-items: center;
+  
+}
+
+.menuOption img{
+  max-width: 40px;
+  border-radius: 50%;
+}
+
+.menuOption p {
+  font-weight: 700;
+  margin:0;
+  font-size: 0.9em;
+}
+
+.mobileMenu a{
+text-decoration: none;
+color: var(--main-typography-color)
+}
+
+@media (min-width: 700px) and (orientation: landscape) {
+  .mobileMenu{
+    display:none
   }
 }
