@@ -2,16 +2,14 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
 export function Levels(props) {
-
-
   const mappedLevels = props.articles.map((article) => (
     <div className="levels" key={article.id}>
       <p>{article.beer}</p>
       <div
         className="circlegraph"
         style={{
-          width: 60,
-          height: 60,
+          width: 50,
+          height: 50,
         }}
       >
         <CircularProgressbar

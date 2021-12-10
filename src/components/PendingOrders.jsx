@@ -11,7 +11,7 @@ export function PendingOrders(props) {
 
   if (queue.length > 0 && queue.length <= 4)
     return (
-      <section className="card">
+      <section className="card orders">
         <div className="header">
           <h1>Pending orders</h1>
         </div>
@@ -20,7 +20,7 @@ export function PendingOrders(props) {
             width: "100%",
             textAlign: "left",
             gap: "1em",
-            fontSize: "0.9em",
+
             marginLeft: "0",
           }}
         >

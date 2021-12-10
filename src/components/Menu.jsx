@@ -14,13 +14,17 @@ export function Menu(props) {
   return (
     <section className="top_menu">
       <div className="logo">
-        <h1>FooBar</h1>
+        <img src="src/assets/logo-white.svg" alt="logo"></img>
       </div>
       <section className="menucardwrapper">
         <div className="menucard" id="time">
-          <h1>Time until closure</h1>
-          {<h1 id="remaining_time">{remainingTime > 0 ? timeUntilClosure : "0 h 0 min"}</h1>}
-          </div>
+          <h1>The bar closes in</h1>
+          {
+            <h1 id="remaining_time">
+              {remainingTime > 0 ? timeUntilClosure : "0 h 0 min"}
+            </h1>
+          }
+        </div>
         <div className="menucard" id="people">
           <h1>People in queue</h1>
           <h1 id="people_queue">{props.articles.queue.length}</h1>
