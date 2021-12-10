@@ -7,6 +7,7 @@ import { Levels } from "./components/Levels.jsx";
 import { Barrels } from "./components/Barrels.jsx";
 import { SoldBeers } from "./components/SoldBeers.jsx";
 import QueueArchive from "./components/Queue.jsx";
+import { SpinnerDotted  } from 'spinners-react';
 
 function App() {
   const [articles, setArticles] = useState([]);
@@ -49,7 +50,7 @@ function App() {
     return () => clearInterval(interval);
   }, []);
 
-  if (loading || loading2) return <h1>Loading...</h1>;
+  if (loading || loading2) return <div className="spinner-wrapper"><h1>One second, we're changing the keg</h1><SpinnerDotted size={71} thickness={133} speed={100} color="rgba(87, 50, 84, 1)" /></div>;
 
   return (
     <div className="App">
