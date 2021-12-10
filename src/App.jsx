@@ -9,24 +9,47 @@ import { SoldBeers } from "./components/SoldBeers.jsx";
 import QueueArchive from "./components/Queue.jsx";
 
 function App() {
-  const [count, setCount] = useState(0);
   const [articles, setArticles] = useState([]);
-
+  const [archive, setArchive] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [loading2, setLoading2] = useState(true);
+
+  const options = {
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      "x-apikey": "602e36c15ad3610fb5bb62b8",
+      "cache-control": "no-cache",
+    },
+  };
+
+  const getArchive = async () => {
+    try {
+      const response = await fetch("https://kea21-4d62.restdb.io/rest/foobar", options);
+      const json = await response.json();
+      setArchive(json);
+    } catch (error) {
+      console.error(error);
+    } finally { setLoading2(false);
+    }
+  };
+
+  async function fetchData() {
+    const res = await fetch("https://foo-bar-project.herokuapp.com/");
+    const data = await res.json();
+    setArticles(data);
+    setLoading(false);
+  }
+ 
   useEffect(() => {
-    const interval = setInterval(() => {
-      async function fetchData() {
-        const res = await fetch("https://foo-bar-project.herokuapp.com/");
-        const data = await res.json();
-        setArticles(data);
-        setLoading(false);
-      }
-      fetchData();
-    }, 5000);
+    getArchive();
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => { fetchData()}, 5000);
     return () => clearInterval(interval);
   }, []);
 
-  if (loading) return <h1>Loading...</h1>;
+  if (loading || loading2) return <h1>Loading...</h1>;
 
   return (
     <div className="App">
@@ -35,9 +58,9 @@ function App() {
         <PendingOrders articles={articles} />
         <Bartenders articles={articles} />
         <Levels articles={articles.taps} />
-        <Barrels articles={articles.storage} />      
-        <QueueArchive />
-        <SoldBeers />      
+        <Barrels articles={articles.storage} />
+        <QueueArchive archive={archive}/>
+        <SoldBeers archive={archive}/>
       </section>
     </div>
   );

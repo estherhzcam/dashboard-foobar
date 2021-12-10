@@ -1,7 +1,8 @@
 import { useState, useEffect, memo } from "react";
 
-export const SoldBeers = memo(function SoldBeers() {
-  const [archive, setArchive] = useState([]);
+export const SoldBeers = memo(function SoldBeers(props) {
+  const archive = props.archive
+  /* const [archive, setArchive] = useState([]);
   const [loading2, setLoading2] = useState(true);
   useEffect(() => {
     async function fetchData2() {
@@ -23,7 +24,7 @@ export const SoldBeers = memo(function SoldBeers() {
     }
     fetchData2();
   }, []);
-  if (loading2) return <h1></h1>;
+  if (loading2) return <h1></h1>; */
   const beerAmountCopy = [...archive];
   let beerAmounts = {};
 
