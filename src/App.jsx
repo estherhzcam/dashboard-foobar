@@ -11,6 +11,7 @@ import QueueArchive from "./components/Queue.jsx";
 function App() {
   const [count, setCount] = useState(0);
   const [articles, setArticles] = useState([]);
+
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const interval = setInterval(() => {
@@ -19,12 +20,12 @@ function App() {
         const data = await res.json();
         setArticles(data);
         setLoading(false);
-        /*  console.log("data", data); */
       }
       fetchData();
     }, 5000);
     return () => clearInterval(interval);
   }, []);
+
   if (loading) return <h1>Loading...</h1>;
 
   return (
@@ -34,9 +35,9 @@ function App() {
         <PendingOrders articles={articles} />
         <Bartenders articles={articles} />
         <Levels articles={articles.taps} />
-        <Barrels articles={articles.storage} />
-        <SoldBeers articles={articles} />
+        <Barrels articles={articles.storage} />      
         <QueueArchive />
+        <SoldBeers />      
       </section>
     </div>
   );
