@@ -11,6 +11,53 @@ export function Menu(props) {
   const remainingTime = closingTime - currentTime;
   const timeUntilClosure = hourFromMs(remainingTime);
 
+  //calculate total revenue
+  const archive = props.archive;
+  const beerAmountCopy = [...archive];
+  let beerAmounts = {};
+
+  beerAmountCopy.forEach((e) => {
+    for (var key in e.accumulated) {
+      if (!(key in beerAmounts)) {
+        beerAmounts[key] = {
+          ...e.accumulated[key],
+        };
+
+        beerAmounts[key].price =
+          e.accumulated[key].price * e.accumulated[key].amount;
+      } else {
+        beerAmounts[key].price +=
+          e.accumulated[key].price * e.accumulated[key].amount;
+
+        beerAmounts[key].amount += e.accumulated[key].amount;
+      }
+    }
+  });
+
+  console.log("beeramounts after", beerAmounts);
+  let maxAmount = 0;
+  let maxPrice = 0;
+  let beerAmountArr = [];
+  for (let key in beerAmounts) {
+    beerAmountArr.push({
+      name: key,
+      data: beerAmounts[key],
+    });
+    maxAmount =
+      beerAmounts[key].amount > maxAmount ? beerAmounts[key].amount : maxAmount;
+    maxPrice =
+      beerAmounts[key].price > maxPrice ? beerAmounts[key].price : maxPrice;
+  }
+
+  let totalRevenueArr = [];
+  beerAmountArr.forEach((e) => {
+    totalRevenueArr.push(e.data.price);
+  });
+  console.log("total", totalRevenueArr);
+  let totalRevenue = 0;
+  totalRevenue = totalRevenueArr.reduce((a, b) => a + b);
+  console.log("revenue", totalRevenue);
+
   return (
     <section className="top_menu">
       <div className="logo">
@@ -32,7 +79,7 @@ export function Menu(props) {
         <div className="menucard" id="sales">
           <h1>Sales</h1>
           <h1 id="sales">
-            <span>30.000</span>DKK
+            <span>{totalRevenue}</span> DKK
           </h1>
         </div>
       </section>
