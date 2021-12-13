@@ -1,4 +1,4 @@
-import bartendersUrl from '../assets/bartenders/bartenders_black.svg';
+import bartendersUrl from '../assets/icons/bartenders_black.svg';
 import ordersUrl from '../assets/icons/orders_black.svg';
 import stockUrl from '../assets/icons/barrel_black.svg';
 import salesUrl from '../assets/icons/sales_black.svg';
