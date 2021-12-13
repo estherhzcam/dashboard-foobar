@@ -7,7 +7,7 @@ import { Levels } from "./components/Levels.jsx";
 import { Barrels } from "./components/Barrels.jsx";
 import { SoldBeers } from "./components/SoldBeers.jsx";
 import QueueArchive from "./components/Queue.jsx";
-import { SpinnerDotted  } from 'spinners-react';
+import {SpinnerDotted} from 'spinners-react';
 import {MobileMenu} from './components/MobileMenu.jsx'
 
 function App() {
@@ -26,12 +26,16 @@ function App() {
 
   const getArchive = async () => {
     try {
-      const response = await fetch("https://kea21-4d62.restdb.io/rest/foobar", options);
+      const response = await fetch(
+        "https://kea21-4d62.restdb.io/rest/foobar",
+        options
+      );
       const json = await response.json();
       setArchive(json);
     } catch (error) {
       console.error(error);
-    } finally { setLoading2(false);
+    } finally {
+      setLoading2(false);
     }
   };
 
@@ -41,21 +45,34 @@ function App() {
     setArticles(data);
     setLoading(false);
   }
- 
+
   useEffect(() => {
     getArchive();
   }, []);
 
   useEffect(() => {
-    const interval = setInterval(() => { fetchData()}, 5000);
+    const interval = setInterval(() => {
+      fetchData();
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
-  if (loading || loading2) return <div className="spinner-wrapper"><h1>One second, we're changing the keg</h1><SpinnerDotted size={71} thickness={133} speed={100} color="rgba(87, 50, 84, 1)" /></div>;
+  if (loading || loading2)
+    return (
+      <div className="spinner-wrapper">
+        <h1>One second, we're changing the keg</h1>
+        <SpinnerDotted
+          size={71}
+          thickness={133}
+          speed={100}
+          color="rgba(87, 50, 84, 1)"
+        />
+      </div>
+    );
 
   return (
     <div className="App">
-      <Menu articles={articles} />
+      <Menu articles={articles} archive={archive} />
       <section id="cards-wrapper">
         <PendingOrders articles={articles} />
         <Bartenders articles={articles} />

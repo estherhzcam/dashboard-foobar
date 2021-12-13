@@ -1,7 +1,7 @@
 import { useState, useEffect, memo } from "react";
 
 export const SoldBeers = memo(function SoldBeers(props) {
-  const archive = props.archive
+  const archive = props.archive;
   /* const [archive, setArchive] = useState([]);
   const [loading2, setLoading2] = useState(true);
   useEffect(() => {
