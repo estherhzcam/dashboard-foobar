@@ -1,13 +1,6 @@
 export function Barrels(props) {
- 
-  /* const color = props.articles.forEach((art) => {
-    art.amount > 3 ? "red" : "green";
-  }); */
-  /*   style={{
-          backgroundColor: article.amount > 3 ? "red" : "green",
-        }} */
-
   const barrelsCopy = [...props.articles];
+  // sort from lowers to highers number
   barrelsCopy.sort((a, b) => {
     if (a.amount > b.amount) {
       return 1;
@@ -16,20 +9,10 @@ export function Barrels(props) {
     }
   });
 
+  // add id
   barrelsCopy.map((beer) => (beer.id = Math.random()));
 
-  // this is how it is possible to add prices to beers
-  /*   barrelsCopy.map((beer) => {
-    beer.id = Math.random();
-    if (beer.name == "El Hefe") {
-      beer.price = "50kr";
-    } else {
-      beer.price = "100kr";
-    }
-  }); */
-
-
-
+  // give different color regarding the amount of barrels
   const mappedBeers = barrelsCopy.map((article) => (
     <article className="beer" key={article.id}>
       <div
@@ -56,24 +39,7 @@ export function Barrels(props) {
       <div className="header">
         <h1>Barrels in stock</h1>
       </div>
-      <div className="graph barrels">
-        {mappedBeers}
-        {/* <div className="beer">
-                    <div className="circle"><p>1</p></div>
-                    <p>El Hefe</p>
-                </div>
-               */}
-      </div>
+      <div className="graph barrels">{mappedBeers}</div>
     </section>
   );
 }
-/* 
-function Barrel() {
-  return (
-    <article>
-      <h2>Product 1</h2>
-      <p>lorem</p>
-    </article>
-  );
-}
- */

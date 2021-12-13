@@ -34,29 +34,21 @@ export function Menu(props) {
     }
   });
 
-  console.log("beeramounts after", beerAmounts);
-  let maxAmount = 0;
-  let maxPrice = 0;
   let beerAmountArr = [];
   for (let key in beerAmounts) {
     beerAmountArr.push({
       name: key,
       data: beerAmounts[key],
     });
-    maxAmount =
-      beerAmounts[key].amount > maxAmount ? beerAmounts[key].amount : maxAmount;
-    maxPrice =
-      beerAmounts[key].price > maxPrice ? beerAmounts[key].price : maxPrice;
   }
 
   let totalRevenueArr = [];
   beerAmountArr.forEach((e) => {
     totalRevenueArr.push(e.data.price);
   });
-  console.log("total", totalRevenueArr);
+
   let totalRevenue = 0;
   totalRevenue = totalRevenueArr.reduce((a, b) => a + b);
-  console.log("revenue", totalRevenue);
 
   return (
     <section className="top_menu">

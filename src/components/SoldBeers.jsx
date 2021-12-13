@@ -1,33 +1,16 @@
-import { useState, useEffect, memo } from "react";
+import { memo } from "react";
 
 export const SoldBeers = memo(function SoldBeers(props) {
   const archive = props.archive;
-  /* const [archive, setArchive] = useState([]);
-  const [loading2, setLoading2] = useState(true);
-  useEffect(() => {
-    async function fetchData2() {
-      const options = {
-        headers: {
-          "Content-Type": "application/json; charset=utf-8",
-          "x-apikey": "602e36c15ad3610fb5bb62b8",
-          "cache-control": "no-cache",
-        },
-      };
-      const res = await fetch(
-        "https://kea21-4d62.restdb.io/rest/foobar",
-        options
-      );
-      const data2 = await res.json();
-      setArchive(data2);
-      setLoading2(false);
-      console.log(data2);
-    }
-    fetchData2();
-  }, []);
-  if (loading2) return <h1></h1>; */
+
   const beerAmountCopy = [...archive];
   let beerAmounts = {};
 
+  // loops through each property in object
+  // if property is not already in the new object beerAmounts, then
+  // it copies the property to the new object and calculates the price
+  // else adds the prices and amount to already exists property in new object
+  // to get the total price and amount of each beer
   beerAmountCopy.forEach((e) => {
     for (var key in e.accumulated) {
       if (!(key in beerAmounts)) {
@@ -45,35 +28,29 @@ export const SoldBeers = memo(function SoldBeers(props) {
       }
     }
   });
-
-  console.log("beeramounts after", beerAmounts);
   let maxAmount = 0;
   let maxPrice = 0;
   let beerAmountArr = [];
+  //it converts object into array
   for (let key in beerAmounts) {
     beerAmountArr.push({
       name: key,
       data: beerAmounts[key],
     });
+    // find the maximal amount and price
+    // if the number is bigger than already existing, then set the maxAmount or maxPrice to it
+    // otherwise, stick with the old one
     maxAmount =
       beerAmounts[key].amount > maxAmount ? beerAmounts[key].amount : maxAmount;
     maxPrice =
       beerAmounts[key].price > maxPrice ? beerAmounts[key].price : maxPrice;
   }
 
-  let totalRevenueArr = [];
-  beerAmountArr.forEach((e) => {
-    totalRevenueArr.push(e.data.price);
-  });
-  console.log("total", totalRevenueArr);
-  let totalRevenue = 0;
-  totalRevenue = totalRevenueArr.reduce((a, b) => a + b);
-  console.log("revenue", totalRevenue);
-
   let pixelWidth = 180;
-
-  console.log("my data", beerAmountArr);
+  // sets an id
   beerAmountArr.map((e) => (e.id = Math.random()));
+  // mapps through the array
+  //calculates the length of the bar
   const mappedBeerAmount = beerAmountArr.map((article) => (
     <article className="beerAmount" key={article.id}>
       <p className="beer-name">{article.name}</p>

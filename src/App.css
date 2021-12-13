@@ -22,10 +22,10 @@
   height: 100vh;
 }
 
-.spinner-wrapper{
+.spinner-wrapper {
   height: 100vh;
   width: 100vw;
-  display:flex;
+  display: flex;
   flex-direction: column;
   gap: 2em;
   justify-content: center;
@@ -66,7 +66,6 @@ td .circle {
   padding: 0.3rem;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  /*  margin-top: -1rem; */
 }
 ul li:last-of-type {
   margin-bottom: 0.5rem;
@@ -144,11 +143,6 @@ ul {
 
 /*----------------Barrels--------------*/
 .beer {
-  /* display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
-  align-items: center;
-  flex: 1 0 0; */
   display: grid;
   grid-template-columns: max-content 1fr;
   gap: 0.5rem;
@@ -211,7 +205,6 @@ ul {
 .bar {
   display: flex;
   flex-direction: row;
-  /*  align-items: center; */
   gap: 0.3rem;
 }
 .bar p {
@@ -334,7 +327,6 @@ tspan {
   }
 }
 @media (min-width: 912px) {
-  /* menu top and two columns for the apps */
   .App {
     grid-template-columns: max-content 1fr;
   }
@@ -385,7 +377,6 @@ tspan {
   }
 }
 
-
 /* --------------Menu mobile----------- */
 
 .mobileMenu {
@@ -393,11 +384,11 @@ tspan {
   height: 10vh;
   display: flex;
   justify-content: space-around;
-  align-items:center;
+  align-items: center;
   background-color: var(--bg-color);
   position: fixed;
   top: 90%;
-  left:0;
+  left: 0;
   padding: 0 1vw;
 }
 
@@ -405,28 +396,27 @@ tspan {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr auto;
- justify-items: center;
-  
+  justify-items: center;
 }
 
-.menuOption img{
+.menuOption img {
   max-width: 40px;
   border-radius: 50%;
 }
 
 .menuOption p {
   font-weight: 700;
-  margin:0;
+  margin: 0;
   font-size: 0.9em;
 }
 
-.mobileMenu a{
-text-decoration: none;
-color: var(--main-typography-color)
+.mobileMenu a {
+  text-decoration: none;
+  color: var(--main-typography-color);
 }
 
 @media (min-width: 700px) and (orientation: landscape) {
-  .mobileMenu{
-    display:none
+  .mobileMenu {
+    display: none;
   }
 }
