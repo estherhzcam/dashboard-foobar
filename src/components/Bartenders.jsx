@@ -102,8 +102,9 @@ export function Bartenders(props) {
           <tr>
             <td>
               <img
-                src="src\assets\bartenders\jonas.png"
-                style={{ width: "30px" }}
+                src="src\assets\bartenders\jonas.svg"
+                alt="jonas-icon"
+                style={{ width: "30px", height: "30px" }}
               />
             </td>
             <td>{jonas.name}</td>
@@ -113,8 +114,9 @@ export function Bartenders(props) {
           <tr>
             <td>
               <img
-                src="src\assets\bartenders\dannie.png"
-                style={{ width: "30px" }}
+                src="src\assets\bartenders\dannie.svg"
+                alt="dannie-icon"
+                style={{ width: "30px", height: "30px" }}
               />
             </td>
             <td>{dannie.name}</td>
@@ -124,8 +126,9 @@ export function Bartenders(props) {
           <tr>
             <td>
               <img
-                src="src\assets\bartenders\klaus.png"
-                style={{ width: "30px" }}
+                src="src\assets\bartenders\klaus.svg"
+                alt="klaus-icon"
+                style={{ width: "30px", height: "30px" }}
               />
             </td>
             <td>{klaus.name}</td>
@@ -135,8 +138,9 @@ export function Bartenders(props) {
           <tr>
             <td>
               <img
-                src="src\assets\bartenders\peter.png"
-                style={{ width: "30px" }}
+                src="src\assets\bartenders\peter.svg"
+                alt="peter-icon"
+                style={{ width: "30px", height: "30px" }}
               />
             </td>
             <td>{peter.name}</td>
