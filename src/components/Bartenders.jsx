@@ -1,3 +1,7 @@
+import jonasUrl from '../assets/bartenders/jonas.svg'
+import dannieUrl from '../assets/bartenders/dannie.svg'
+import klausUrl from '../assets/bartenders/klaus.svg'
+import peterUrl from '../assets/bartenders/peter.svg'
 export function Bartenders(props) {
   const dannie = props.articles.bartenders[3];
   const jonas = props.articles.bartenders[2];
@@ -104,7 +108,7 @@ export function Bartenders(props) {
           <tr>
             <td>
               <img
-                src="src\assets\bartenders\jonas.svg"
+                src={jonasUrl}
                 alt="jonas-icon"
                 style={{ width: "30px", height: "30px" }}
               />
@@ -116,7 +120,7 @@ export function Bartenders(props) {
           <tr>
             <td>
               <img
-                src="src\assets\bartenders\dannie.svg"
+                src={dannieUrl}
                 alt="dannie-icon"
                 style={{ width: "30px", height: "30px" }}
               />
@@ -128,7 +132,7 @@ export function Bartenders(props) {
           <tr>
             <td>
               <img
-                src="src\assets\bartenders\klaus.svg"
+                src={klausUrl}
                 alt="klaus-icon"
                 style={{ width: "30px", height: "30px" }}
               />
@@ -140,7 +144,7 @@ export function Bartenders(props) {
           <tr>
             <td>
               <img
-                src="src\assets\bartenders\peter.svg"
+                src={peterUrl}
                 alt="peter-icon"
                 style={{ width: "30px", height: "30px" }}
               />
