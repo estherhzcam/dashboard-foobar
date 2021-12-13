@@ -1,3 +1,4 @@
+import logoUrl from '../assets/logo-white.svg'
 export function Menu(props) {
 
   // in order to find the remaining time until the bar closes, we'll extract the day, month and year we're in
@@ -58,7 +59,7 @@ export function Menu(props) {
   return (
     <section className="top_menu">
       <div className="logo">
-        <img src="src/assets/logo-white.svg" alt="logo"></img>
+        <img src={logoUrl} alt="logo"></img>
       </div>
       <section className="menucardwrapper">
         <div className="menucard" id="time">
