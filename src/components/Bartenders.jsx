@@ -3,6 +3,8 @@ export function Bartenders(props) {
   const jonas = props.articles.bartenders[2];
   const klaus = props.articles.bartenders[1];
   const peter = props.articles.bartenders[0];
+
+  //based on the status of the bartender, we'll display the element with a different style
   const statusAdjusted = (status) => {
     if (
       status === "startServing" ||

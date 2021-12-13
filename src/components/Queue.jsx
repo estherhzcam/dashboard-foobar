@@ -5,20 +5,20 @@ import { useState, useEffect, memo } from "react";
 
 export const QueueArchive = memo(function Queue(props) {
   const queue = props.archive;
-  const [data, setData] = useState([])
-
+  const [data, setData] = useState([]);
 
   //if we had more data we'd have to find out the range of data based on the timestamp of opening and closing time
   const openingTime = new Date(2021, 11, 8, 12).getTime();
   const closingTime = new Date(2021, 11, 8, 22).getTime();
- 
 
   //we need to clean the data
-  useEffect(() => {async function cleaning() {
-    const dataCleaned = await cleanData(queue, openingTime, closingTime);
-    console.log("cleaned", dataCleaned);
-    setData(dataCleaned);}
-    cleaning()
+  useEffect(() => {
+    async function cleaning() {
+      const dataCleaned = await cleanData(queue, openingTime, closingTime);
+
+      setData(dataCleaned);
+    }
+    cleaning();
   }, []);
 
   return (
@@ -41,26 +41,25 @@ export const QueueArchive = memo(function Queue(props) {
 });
 
 function cleanData(data, opening, closing) {
-  console.log("cleaning");
-  //we receive a huge array of objects, we need to clean it.
-  //1) we'll map through it and get the orders between the 12:00 and 22:00 of December 8th;
-  //2) We'll extract the queue at o'clock hours
-  //3) We need to recreate the array with correct hour format
+  // In a real life situation, we'd receive a huge array of objects that we'd to clean.
+  //1) we'd map through it and get the orders between the 12:00 and 22:00 of the desired day (day before, f.example);
+  //2) We'd extract the queue at o'clock hours
+  //3) We'd need to recreate the array with correct hour format
   class OrderInQueue {
     constructor(queue, time) {
       this.queue = queue;
       this.time = time;
     }
   }
+  //here we'll modiify the hour format
   const formatedArray = data.map((order) => {
     return new OrderInQueue(order.queue, Date.parse(order.timestamp));
   });
+
+  //here, we'll filter the array to get only the o'clock hours
   const filteredArray = formatedArray.filter((order) => parseInt((order.time / (1000 * 60)) % 60) == 0);
 
-  console.log(filteredArray);
-  // we need to adapt the hour format
-
-  //we'll need to fix the hour difference
+  // here, we'll convert the hour in the array (currently in milliseconds, in hours and minutes and return the component)
   const lastArray = filteredArray.map((order) => {
     const hour = parseInt((order.time / (1000 * 60 * 60)) % 24) + 1;
     const minutes = parseInt((order.time / (1000 * 60)) % 60);

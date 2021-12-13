@@ -1,4 +1,6 @@
 export function Menu(props) {
+
+  // in order to find the remaining time until the bar closes, we'll extract the day, month and year we're in
   let currentTime = props.articles.timestamp;
 
   const today = new Date(currentTime);
@@ -6,9 +8,12 @@ export function Menu(props) {
   const month = today.getMonth();
   const year = today.getFullYear();
 
+// based on that, we'll get the closing time of the bar and we'll be able to substract the closing time from the current time in the same format (milliseconds from the 1st of january 1970 )
   const closingDate = new Date(year, month, day, 22);
   const closingTime = closingDate.getTime();
   const remainingTime = closingTime - currentTime;
+
+  //based on that we'll calculate how many hours and minutes left until the bar closes.
   const timeUntilClosure = hourFromMs(remainingTime);
 
   //calculate total revenue
