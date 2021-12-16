@@ -12,10 +12,7 @@ export function Order(props) {
         counter++;
       }
     });
-    const newBeer = {
-      beerName: product,
-      amount: counter,
-    };
+   
     return { beerName: product, amount: counter };
   });
 //then, we need to remove duplicated elements
