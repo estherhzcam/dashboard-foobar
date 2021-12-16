@@ -12,7 +12,7 @@ export const SoldBeers = memo(function SoldBeers(props) {
   // else adds the prices and amount to already exists property in new object
   // to get the total price and amount of each beer
   beerAmountCopy.forEach((e) => {
-    for (var key in e.accumulated) {
+    for (let key in e.accumulated) {
       if (!(key in beerAmounts)) {
         beerAmounts[key] = {
           ...e.accumulated[key],
