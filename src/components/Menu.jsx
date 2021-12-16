@@ -1,6 +1,5 @@
-import logoUrl from '../assets/logo-white.svg'
+import logoUrl from "../assets/logo-white.svg";
 export function Menu(props) {
-
   // in order to find the remaining time until the bar closes, we'll extract the day, month and year we're in
   let currentTime = props.articles.timestamp;
 
@@ -9,7 +8,7 @@ export function Menu(props) {
   const month = today.getMonth();
   const year = today.getFullYear();
 
-// based on that, we'll get the closing time of the bar and we'll be able to substract the closing time from the current time in the same format (milliseconds from the 1st of january 1970 )
+  // based on that, we'll get the closing time of the bar and we'll be able to substract the closing time from the current time in the same format (milliseconds from the 1st of january 1970 )
   const closingDate = new Date(year, month, day, 22);
   const closingTime = closingDate.getTime();
   const remainingTime = closingTime - currentTime;
@@ -23,7 +22,7 @@ export function Menu(props) {
   let beerAmounts = {};
 
   beerAmountCopy.forEach((e) => {
-    for (var key in e.accumulated) {
+    for (let key in e.accumulated) {
       if (!(key in beerAmounts)) {
         beerAmounts[key] = {
           ...e.accumulated[key],
